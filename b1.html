@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="runMapper()">Run Map</button>
+    <button onclick="runObject()">Run Object</button>
+    <script>
+        function runMapper(){
+            var map = new Map();
+            console.log("running map")
+            console.time("Map");
+            for(var i=0;i<100000;i++){
+                map.set(i,i);
+            }
+            console.timeEnd("Map");
+        }
+
+        function runObject(){
+            var obj = {};
+            console.log("running object")
+            console.time("Object");
+            for(var i=0;i<100000;i++){
+                obj[i] = i;
+            }
+            console.timeEnd("Object");
+        }
+    </script>
+</body>
+</html>

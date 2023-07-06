@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // let num = parseInt(prompt("Enter a number:"));
+
+            // const isEven = (number) => {
+            // return number % 2 === 0;
+            // }
+
+            // if (isEven(num)) {
+            // alert(num + " is even.");
+            // } else {
+            // alert(num + " is odd.");
+            // }
+
+            const simulateAsyncTask = (message, delay) => {
+                    return new Promise((resolve,reject) => {
+
+                        setTimeout(() => {
+                            console.log(message);
+                            let a = 10;
+                            let b = 20;
+                            let sum = a+b;
+                            resolve(sum);
+                        }, delay);
+                    }
+                    )
+                }
+
+simulateAsyncTask("Start", 1000)
+  .then((result) => {
+    console.log("First task completed with result:", result);
+    return simulateAsyncTask("Second task", 2000);
+  })
+  .then((result) => {
+    console.log("Second task completed with result:", result);
+    return simulateAsyncTask("Third task", 3000);
+  })
+  .then((result) => {
+    console.log("Third task completed with result:", result);
+    // Add more .then() blocks for additional tasks if needed
+  })
+  .catch((error) => {
+    console.log("Error:", error);
+  });
+
+    </script>
+</body>
+</html>

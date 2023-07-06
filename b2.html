@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <button onclick=runSet()>for set</button>
+    <button onclick=runArray()>for array</button>
+<body>
+    <script>
+        function runSet(){
+            console.log("running set")
+            const set = new Set();
+            for (let i = 0; i < 100000; i++) {
+                set.add(Math.floor(Math.random() * 100000));
+            }
+            console.time("Set");
+            const searchValue = 5000;
+            const isValuePresent = set.has(searchValue);
+            console.log(isValuePresent);
+            console.timeEnd("Set");
+        }
+
+        function runArray(){
+            console.log("running array")
+            const array = [];
+            for (let i = 0; i < 100000; i++) {
+                array.push(Math.floor(Math.random() * 100000));
+            }
+            console.time("Array");
+            const searchValue = 5000;
+            const isValuePresent = array.includes(searchValue);
+            console.log(isValuePresent);
+            console.timeEnd("Array");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+               <title>Date Search and Display</title>
+
+
+               <script>
+                            //   function searchAndDisplayDate() {
+                            //                  var inputString = document.getElementById("inputString").value;
+                            //                  var dateRegex = /\d{2}\/\d{2}\/\d{4}/;
+                            //                  var match = inputString.match(dateRegex);
+
+                            //                  if (match) {
+                            //                                 alert("Date found: " + match[0]);
+                            //                  } else {
+                            //                                 alert("No date found in the string.");
+                            //                  }
+                            //   }
+
+                            const myMap = new Map();
+
+                            while(true){
+                                const key = prompt("Enter the key or done for exit");
+                                if(key == "done"){
+                                    break;
+                                }
+                                const value = prompt("Enter the value");
+                                myMap.set(key,value);
+
+                            }
+                            const key = prompt("Enter the key to search");
+                            if(myMap.has(key)){
+                                alert("Value is " + myMap.get(key));
+                            }
+                            else{
+                                alert("Key not found");
+                            }
+
+                            for(let [key,value] of myMap){
+                                alert(key + " " + value);
+                            }
+               </script>
+</head>
+
+<body>
+               <label for="inputString">Enter a string: </label>
+               <input type="text" id="inputString">
+               <button onclick="searchAndDisplayDate()">Search Date</button>
+</body>
+
+</html>

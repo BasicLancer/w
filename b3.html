@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(a+b);
+                },2000)
+            })
+           
+        }
+        function sub(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(a-b);
+                },2000)
+            })
+           
+        }
+        function mul(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(a*b);
+                },2000)
+            })
+           
+        }
+        function div(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                if(b==0){
+                    reject("Division by zero not possible");
+                }
+                else{
+                    resolve(a/b);
+                }
+                },2000)
+                
+            })
+           
+        }
+
+        async function calc(){
+            try{
+                let a = parseInt(prompt("Enter first number"));
+                let b = parseInt(prompt("Enter second number"));
+                let sum = await add(a,b);
+                let diff = await sub(a,b);
+                let prod = await mul(a,b);
+                let quo = await div(a,b);
+                alert("Sum is " + sum + "\nDifference is " + diff + "\nProduct is " + prod + "\nQuotient is " + quo);
+            }
+            catch(err){
+                alert(err);
+            }
+        }
+        calc();
+    </script>
+</body>
+</html>

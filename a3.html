@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="str">Enter the string</label>
+    <input type="text" name="str" id="str">
+    <button id="sortbutton">Start</button>
+    <box id="result">Result is = </box>
+    <script>
+        // let a = prompt("Enter the string");
+        // const vowel = (str) => {
+        //     let count = 0;
+        //     for(let i=0;i<str.length;i++){
+        //         if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u'){
+        //             count++;
+        //         }
+        //     }
+        //     return count;
+        // }
+        // alert("Number of vowels in the string is " + vowel(a));
+        function sortString(str) {
+            var str = document.getElementById("str").value;
+            
+            var s  = str.split('').sort().join('');
+            // document.write("sorted string is " + s);
+            document.getElementById("result").innerHTML = "Result is = " + s;
+            
+            
+
+
+        }
+
+        document.getElementById("sortbutton").addEventListener("click", sortString);
+        
+
+        
+    </script>
+</body>
+</html>

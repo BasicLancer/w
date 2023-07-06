@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>    
+    <!-- Build a JavaScript code to find the 
+    leap years in a given range of year -->
+    Implement a program to store values into a set,
+    and to retrieve value from the set,
+    to iterate over the set
+    </h1>
+</body>
+    <script>
+        // const start = parseInt(prompt("Enter the starting year:"));
+        // const end = parseInt(prompt("Enter the ending year:"));
+        // let result = "";
+        // for(let i=start;i<=end;i++){
+        //     if(i%4==0 && i%100!=0 || i%400==0){
+        //         result += i + " ";
+        //     }
+        // }
+        // alert("Leap years are " + result);
+       // Create a new Set
+                    const mySet = new Set();
+
+                    // Prompt the user to enter values and store them in the Set
+                    while (true) {
+                    const value = prompt("Enter a value (or 'done' to exit):");
+                    if (value.toLowerCase() === "done") {
+                        break;
+                    }
+                    mySet.add(value);
+                    }
+
+                    // Check if a value exists in the Set
+                    const searchValue = prompt("Enter a value to search in the Set:");
+                    alert(mySet.has(searchValue));
+
+            
+
+                    // Retrieve the size (number of elements) of the Set
+                    console.log("Size:", mySet.size);
+
+                    // Iterate over the Set using for...of loop
+                    console.log("Set elements:");
+                    for (const element of mySet) {
+                    console.log(element);
+                    }
+
+                    // Remove a value from the Set
+                    const removeValue = prompt("Enter a value to remove from the Set:");
+                    mySet.delete(removeValue);
+
+                    // Clear all values from the Set
+                    mySet.clear();
+
+                    // Check if the Set is empty
+                    console.log("Is the Set empty?", mySet.size === 0);
+                    
+
+
+    </script>
+
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt("Enter first number"));
+        let b = parseFloat(prompt("Enter second number"));
+        alert("Sum of two numbers is " + (a+b));
+
+        let c = parseInt(prompt("Enter the number to reverse"));
+        let rev = 0;
+        while(c>0){
+            rev = rev*10 + c%10;
+            c = parseInt(c/10);
+        }
+        alert("Reverse of the number is " + parseInt(rev));
+
+        // let c = parseInt(prompt("Enter number to reverse"));
+        // const reverse = (num) =>{
+        //     return parseInt(num.tosString().split('').reverse().join('')); 
+        // }
+        // alert("Reverse of the number is " + reverse(c));
+        // let c = parseInt(prompt("Enter number to reverse"));
+        // const reverse = (num) => {
+        // return parseInt(num.toString().split('').reverse().join(''));
+        // }
+        // alert("Reverse of the number is " + reverse(c));
+
+
+    </script>
+</body>
+</html>

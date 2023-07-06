@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Implement a JavaScript program to 
+        insert elements to an array using 
+        the prompt. and perform binary
+        search on the array to search 
+        for the given element    
+    </h1>
+
+</body>
+    <script>
+        
+        const inputarray = prompt("Enter array sep by ,");
+        const sortedArray = inputarray.split(',').map(Number);
+        const target = parseInt(prompt("Enter the target element:"));
+        const binarySearch = (arr,key) =>{
+            let start = 0;
+            let end = arr.length-1;
+            while(start<=end){
+                let mid = Math.floor((start+end)/2);
+                if(arr[mid]==key){
+                    return mid;
+                }
+                else if(arr[mid]<key){
+                    start = mid+1;
+                }
+                else{
+                    end = mid-1;
+                }
+            }
+        }
+        const index = binarySearch(sortedArray, target);
+        if(index == -1){
+            alert("Element not found");
+        }
+        else{
+            alert("Element found at index " + index);
+        }
+    </script>
+</html>

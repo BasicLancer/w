@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <h1>Jump Search</h1>
+<body>
+    
+    
+    <script>
+        const inputarray = prompt("Enter array sep by ,");
+        const sortedArray = inputarray.split(',').map(Number)   ;
+        const target = parseInt(prompt("Enter the target element:"));
+        const jumpSearch = (arr,key) =>{
+            const n = arr.lenght;
+            const blockSize = Math.floor(Math.sqrt(n));
+            let start = 0;
+            let next = blockSize;
+            while(arr[Math.min(next,n)-1]>key){
+                start = next;
+                next += blockSize;
+                if(start>=n){
+                    return -1;
+                }
+            }
+            while(arr[start]<key){
+                start++;
+                if(start==Math.min(next,n)){
+                    return -1;
+                }
+            }
+            if(arr[start]==key){
+                return start;
+            }
+            return -1;
+        }
+        const index = jumpSearch(sortedArray, target);
+
+        if(index == -1){
+            alert("Element not found");
+        }
+        else{
+            alert("Element found at index " + index);
+        }
+    </script>
+</body>
+</html>
